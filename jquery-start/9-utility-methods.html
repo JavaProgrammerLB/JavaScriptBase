@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+</head>
+<body>
+    <a href="http://jquery.com/">jQuery</a>
+    <script src="jquery-3.2.1.js"></script>
+    <script>
+        $( document ).ready(function() {
+            // $.trim()
+            var s0 = " I am liubei   "
+            var s1 = $.trim(s0);
+            console.log(s0);
+            console.log(s1);
+            // $.each()
+            $.each(["foo", "bar", "baz"], function(idx, val){
+                console.log("element " + idx + " is " + val);
+            });
+            $.each({foo:"bar", baz: "bim"}, function(k, v){
+                console.log(k + ": " + v);
+            });
+            // $.inArray()
+            var myArray = [1, 2, 3, , 4, 5];
+            if ($.inArray(4, myArray) != -1) {
+                console.log("found it !")
+            }
+            // $.extend()
+            var firstObject = {foo: "bar", a: "b"};
+            var secondObject = {foo: "baz"};
+            var newObject = $.extend(firstObject, secondObject);
+            console.log(firstObject.foo);// baz
+            console.log(newObject.foo)// bza
+
+            var firstObject2 = {foo: "bar", a: "b"};
+            var secondeObject2 = {foo:"baz"};
+            var newObject2 = $.extend({}, firstObject2, secondeObject2);
+            console.log(firstObject2.foo);// bar
+            console.log(newObject2.foo)// baz
+            // $.proxy()
+            var myFunction = function(){
+                console.log(this);
+            };
+            var myObject = {foo: "bar"};
+            myFunction();
+            var myProxyFunction = $.proxy(myFunction, myObject);
+            myProxyFunction()
+        });
+    </script>
+</body>
+</html>

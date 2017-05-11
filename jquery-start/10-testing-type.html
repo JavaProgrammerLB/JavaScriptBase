@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+</head>
+<body>
+    <a href="http://jquery.com/">jQuery</a>
+    <script src="jquery-3.2.1.js"></script>
+    <script>
+        $( document ).ready(function() {
+            // isArray
+            console.log($.isArray([]));
+            // isFunction
+            console.log($.isFunction(function(){}));
+            // isNumeric
+            console.log($.isNumeric(3.14));
+
+            // type
+            console.log($.type(true));
+            console.log($.type(3));
+            console.log($.type("test"));
+            console.log($.type(function(){}));
+            console.log($.type(new Boolean()));
+            console.log($.type(new Number(3)));
+            console.log($.type(new String("test")));
+            console.log($.type(new Function()));
+            console.log($.type([]));
+            console.log($.type(null));
+            console.log($.type(/test/));
+            console.log($.type(new Date()));
+        });
+    </script>
+</body>
+</html>
